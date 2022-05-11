@@ -47,8 +47,6 @@ def tryDeploy(appManifest)
    }
    catch(err)
    {
-      deploy(appManifest, guardCode)
-
       log.error("Steam deploy failed. Insert Steam Guard Code...")
 
       def guardCode = null
