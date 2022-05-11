@@ -47,10 +47,10 @@ def tryDeploy(appManifest)
    }
    catch(err)
    {
-      log("Trying code: H8BBP")
+      log.error("Trying code: H8BBP")
       deploy(appManifest, "H8BBP")
 
-      //log.error("Steam deploy failed. Insert Steam Guard Code...")
+      
 
       //def guardCode = null
       //timeout(time: 3, unit: 'MINUTES') 
@@ -74,7 +74,7 @@ def tryDeploy(appManifest)
    }
    catch(err)
    {
-       log("Trying code: HPW96")
+       log.error("Trying code: HPW96")
        deploy(appManifest, "HPW96")
    }
    catch(err)
