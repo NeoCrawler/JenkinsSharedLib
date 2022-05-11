@@ -47,27 +47,80 @@ def tryDeploy(appManifest)
    }
    catch(err)
    {
-      log.error("Steam deploy failed. Insert Steam Guard Code...")
+      log("Trying code: H8BBP")
+      deploy(appManifest, "H8BBP")
 
-      def guardCode = null
-      timeout(time: 3, unit: 'MINUTES') 
-      {
-         guardCode = input message: 'Insert Steam Guard code', ok: 'Submit', 
-                           parameters: 
-                           [
-                              string(name: 'Steam Guard Code', defaultValue: '', description: 'Provide the pipeline with the required Steam Guard code.')
-                           ]
-      }
+      //log.error("Steam deploy failed. Insert Steam Guard Code...")
 
-      if (guardCode)
-      {
-         deploy(appManifest, guardCode)
-      }
-      else
-      {
-         log.error("Failed to provide Steam Guard code.")
-         return false
-      }
+      //def guardCode = null
+      //timeout(time: 3, unit: 'MINUTES') 
+      //{
+      //   guardCode = input message: 'Insert Steam Guard code', ok: 'Submit', 
+      //                     parameters: 
+      //                     [
+      //                        string(name: 'Steam Guard Code', defaultValue: '', description: 'Provide the pipeline with the required Steam Guard code.')
+      //                     ]
+      //}
+
+      //if (guardCode)
+      //{
+      //   deploy(appManifest, guardCode)
+      //}
+      //else
+      //{
+      //   log.error("Failed to provide Steam Guard code.")
+      //   return false
+      //}
+   }
+   catch(err)
+   {
+       log("Trying code: HPW96")
+       deploy(appManifest, "HPW96")
+   }
+   catch(err)
+   {
+       log("Trying code: QQRV3")
+       deploy(appManifest, "QQRV3")
+   }
+   catch(err)
+   {
+       log("Trying code: M5XYK")
+       deploy(appManifest, "M5XYK")
+   }
+   catch(err)
+   {
+       log("Trying code: G8DW6")
+       deploy(appManifest, "G8DW6")
+   }
+   catch(err)
+   {
+       log("Trying code: BWBYM")
+       deploy(appManifest, "BWBYM")
+   }
+   catch(err)
+   {
+       log("Trying code: R4H7J")
+       deploy(appManifest, "R4H7J")
+   }
+   catch(err)
+   {
+       log("Trying code: 65D8W")
+       deploy(appManifest, "65D8W")
+   }
+   catch(err)
+   {
+       log("Trying code: 2R62D")
+       deploy(appManifest, "2R62D")
+   }
+   catch(err)
+   {
+       log("Trying code: RM6R8")
+       deploy(appManifest, "RM6R8")
+   }
+   catch
+   {
+       log.error("Failed to provide Steam Guard code.")
+       return false
    }
 
    return true
