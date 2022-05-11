@@ -25,6 +25,11 @@ def build( config, platform, logFile = "${env.WORKSPACE}\\Logs\\UE4Build-${env.B
     }
 }
 
+def MakeWriteableMaps(path = "")
+{
+    bat(label: "Make maps writeable", script: "\"${path}\"" )
+}
+
 def lightBake(platform, logFile = "${env.WORKSPACE}\\Logs\\UE4Build-${env.BUILD_NUMBER}.txt", quality = "Preview")
 {
     // Light baking
