@@ -47,82 +47,30 @@ def tryDeploy(appManifest)
    }
    catch(err)
    {
-       try
-       {
-           log.error("Trying code: H8BBP")
-           deploy(appManifest, "H8BBP")
-       }
-       catch
-       {
-            try
-            {
-                 log.error("Trying code: QQRV3")
-                 deploy(appManifest, "QQRV3")
-            }
-            catch
-            {
-                try
-                {
-                    log.error("Trying code: M5XYK")
-                    deploy(appManifest, "M5XYK")
-                }
-                catch
-                {
-                    try
-                    {
-                        log.error("Trying code: G8DW6")
-                        deploy(appManifest, "G8DW6")
-                    }
-                    catch
-                    {
-                        try
-                        {
-                            log.error("Trying code: BWBYM")
-                            deploy(appManifest, "BWBYM")
-                        }
-                        catch
-                        {
-                            try
-                            {
-                                log.error("Trying code: R4H7J")
-                                deploy(appManifest, "R4H7J")
-                            }
-                            catch
-                            {
-                                log.error("Failed to provide Steam Guard code.")
-                                return false
-                            }
-                        }
-                    }
-                }
-            }
-       }
+      deploy(appManifest, guardCode)
 
-      
+      log.error("Steam deploy failed. Insert Steam Guard Code...")
 
-      
+      def guardCode = null
+      timeout(time: 3, unit: 'MINUTES') 
+      {
+         guardCode = input message: 'Insert Steam Guard code', ok: 'Submit', 
+                           parameters: 
+                           [
+                              string(name: 'Steam Guard Code', defaultValue: '', description: 'Provide the pipeline with the required Steam Guard code.')
+                           ]
+      }
 
-      //def guardCode = null
-      //timeout(time: 3, unit: 'MINUTES') 
-      //{
-      //   guardCode = input message: 'Insert Steam Guard code', ok: 'Submit', 
-      //                     parameters: 
-      //                     [
-      //                        string(name: 'Steam Guard Code', defaultValue: '', description: 'Provide the pipeline with the required Steam Guard code.')
-      //                     ]
-      //}
-
-      //if (guardCode)
-      //{
-      //   deploy(appManifest, guardCode)
-      //}
-      //else
-      //{
-      //   log.error("Failed to provide Steam Guard code.")
-      //   return false
-      //}
+      if (guardCode)
+      {
+         deploy(appManifest, guardCode)
+      }
+      else
+      {
+         log.error("Failed to provide Steam Guard code.")
+         return false
+      }
    }
-
 
    return true
 }
