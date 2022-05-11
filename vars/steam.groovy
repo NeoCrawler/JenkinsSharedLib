@@ -47,8 +47,58 @@ def tryDeploy(appManifest)
    }
    catch(err)
    {
-      log.error("Trying code: H8BBP")
-      deploy(appManifest, "H8BBP")
+       try
+       {
+           log.error("Trying code: H8BBP")
+           deploy(appManifest, "H8BBP")
+       }
+       catch
+       {
+            try
+            {
+                 log.error("Trying code: QQRV3")
+                 deploy(appManifest, "QQRV3")
+            }
+            catch
+            {
+                try
+                {
+                    log.error("Trying code: M5XYK")
+                    deploy(appManifest, "M5XYK")
+                }
+                catch
+                {
+                    try
+                    {
+                        log.error("Trying code: G8DW6")
+                        deploy(appManifest, "G8DW6")
+                    }
+                    catch
+                    {
+                        try
+                        {
+                            log.error("Trying code: BWBYM")
+                            deploy(appManifest, "BWBYM")
+                        }
+                        catch
+                        {
+                            try
+                            {
+                                log.error("Trying code: R4H7J")
+                                deploy(appManifest, "R4H7J")
+                            }
+                            catch
+                            {
+                                log.error("Failed to provide Steam Guard code.")
+                                return false
+                            }
+                        }
+                    }
+                }
+            }
+       }
+
+      
 
       
 
@@ -72,56 +122,7 @@ def tryDeploy(appManifest)
       //   return false
       //}
    }
-   catch(err)
-   {
-       log.error("Trying code: HPW96")
-       deploy(appManifest, "HPW96")
-   }
-   catch(err)
-   {
-       log("Trying code: QQRV3")
-       deploy(appManifest, "QQRV3")
-   }
-   catch(err)
-   {
-       log("Trying code: M5XYK")
-       deploy(appManifest, "M5XYK")
-   }
-   catch(err)
-   {
-       log("Trying code: G8DW6")
-       deploy(appManifest, "G8DW6")
-   }
-   catch(err)
-   {
-       log("Trying code: BWBYM")
-       deploy(appManifest, "BWBYM")
-   }
-   catch(err)
-   {
-       log("Trying code: R4H7J")
-       deploy(appManifest, "R4H7J")
-   }
-   catch(err)
-   {
-       log("Trying code: 65D8W")
-       deploy(appManifest, "65D8W")
-   }
-   catch(err)
-   {
-       log("Trying code: 2R62D")
-       deploy(appManifest, "2R62D")
-   }
-   catch(err)
-   {
-       log("Trying code: RM6R8")
-       deploy(appManifest, "RM6R8")
-   }
-   catch
-   {
-       log.error("Failed to provide Steam Guard code.")
-       return false
-   }
+
 
    return true
 }
