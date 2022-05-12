@@ -30,10 +30,10 @@ def MakeWriteableMaps(path = "")
     bat(label: "Make maps writeable", script: "\"${path}\"" )
 }
 
-def lightBake(platform, logFile = "${env.WORKSPACE}\\Logs\\UE4Build-${env.BUILD_NUMBER}.txt", quality = "Preview")
+def lightBake(platform, logFile = "${env.WORKSPACE}\\Logs\\UE4Build-${env.BUILD_NUMBER}.txt", map = "Hub.umap", quality = "Preview")
 {
     // Light baking
-    bat(label: "Light baking", script: "\"${ue4Info.engineRoot}Engine\\Binaries\\${platform}\\UE4Editor-cmd.exe\" \"${ue4Info.project}\" -Run=ResavePackages -IgnoreChangeList -BuildLighting -Quality=${quality} -buildreflectioncaptures -NoLogTimes -buildtexturestreamingforall -BuildNavigationData -BuildHLOD -Map=Hub.umap -ProjectOnly -AllowCommandletRendering -Log=\"${logFile}\"", returnStatus: true)
+    bat(label: "Light baking", script: "\"${ue4Info.engineRoot}Engine\\Binaries\\${platform}\\UE4Editor-cmd.exe\" \"${ue4Info.project}\" -Run=ResavePackages -IgnoreChangeList -BuildLighting -Quality=${quality} -buildreflectioncaptures -NoLogTimes -buildtexturestreamingforall -BuildNavigationData -BuildHLOD -Map=${map} -ProjectOnly -AllowCommandletRendering -Log=\"${logFile}\"", returnStatus: true)
 }
 
 def pack (platform, outputDir, blueprintOnly = false, logFile = "${env.WORKSPACE}\\Logs\\UE4Build-${env.BUILD_NUMBER}.txt" )
